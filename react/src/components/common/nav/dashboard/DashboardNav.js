@@ -103,8 +103,9 @@ const Styled = {
   DashboardNav: styled.nav`
     position:relative;
     width:180px;
-    min-height:100vh;
+    /* min-height:100vh; */
     /* padding-top:50px; */
+    height:100%;
     background:white;
     .DashboardNav__link{
       display:block;

@@ -18,6 +18,7 @@ import {
 } from 'store/actions';
 
 import {initReducer} from 'lib/utils';
+import {mapper} from 'lib/mapper';
 
 
 const SignupState ={
@@ -344,7 +345,7 @@ function SignUpContainer() {
   const modalObj={
     'email'      : <ModalSendVerifyCode onClick={fnOpenModal}/>,
     'verifyCode' : <ModalComplete title="완료되었습니다." onClick={fnOpenModal} children="인증이 완료되었습니다."/>,
-    'success'    : <ModalComplete onClick={fnOpenModal} okLink={'/auth/signIn'} title={"계정 생성 완료!"} children={"확인 버튼을 누르면 \n 로그인 페이지로 이동합니다."}/>,
+    'success'    : <ModalComplete onClick={fnOpenModal} okLink={mapper.pageUrl.login} title={"계정 생성 완료!"} children={"확인 버튼을 누르면 \n 로그인 페이지로 이동합니다."}/>,
   };
   
   const modalContent = modalObj[typeModalCurrent];

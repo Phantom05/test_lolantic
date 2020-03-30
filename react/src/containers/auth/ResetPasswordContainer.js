@@ -12,6 +12,7 @@ import {ModalSendVerifyCode} from 'components/common/modal';
 import {FullScreenLoading} from 'components/base/loading';
 import { withTheme } from 'styled-components';
 
+import {mapper} from 'lib/mapper';
 
 function ResetPasswordContainer(props) {
   const {auth: authReducer} = useSelector(state => state);
@@ -328,7 +329,7 @@ function ResetPasswordContainer(props) {
   const modalObj={
     'email':<ModalSendVerifyCode onClick={fnOpenModal}/>,
     'verifyCode':<ModalComplete onClick={fnOpenModal} children="인증이 완료되었습니다."/>,
-    'success':<ModalComplete onClick={fnOpenModal} okLink={'/auth/signIn'} children="로그인 페이지로 이동."/>,
+    'success':<ModalComplete onClick={fnOpenModal} okLink={mapper.pageUrl.login} children="로그인 페이지로 이동."/>,
     'failEmail':<ModalComplete onClick={fnOpenModal} title="이메일 인증" children="이메일 인증에 실패했습니다."/>,
     'failCode':<ModalComplete onClick={fnOpenModal} title="인증코드 인증" children="인증 코드 인증에 실패했습니다."/>,
     'failReset':<ModalComplete onClick={fnOpenModal} title="비밀번호 초기화" children="비밀번호 초기화에 실패했습니다."/>,

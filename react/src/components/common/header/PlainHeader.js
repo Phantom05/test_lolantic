@@ -1,6 +1,10 @@
 import React from 'react';
-import {useSelector} from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import {color} from 'styles/__utils';
+import {mapper} from 'lib/mapper';
+import {ProfileMenu} from 'components/common/menu';
 
 function PlainHeader(props) {
   const { auth: authReducer } = useSelector(state => state);
@@ -8,24 +12,31 @@ function PlainHeader(props) {
   const { isAutheticated } = signIn;
 
   return (
-    <div>
+    <Styled.PlainHeader>
+      Dashboard Kit {isAutheticated && <ProfileMenu />}
       <div>
-      <Link to="/">Home</Link>
-      </div>
-      <div>
-        <Link to="/project">프로젝트 </Link>
-      </div>
-      <div>
-        {!isAutheticated && <Link to="/auth/signin">로그인</Link>}
+        {!isAutheticated && <Link to={mapper.pageUrl.login}>로그인</Link>}
       </div>
       <div>
         {!isAutheticated && <Link to="/auth/signup">회원가입</Link>}
       </div>
-      <div>
-        <Link to="/auth/logout">로그아웃</Link>
-      </div>
-    </div>
+      
+      
+
+
+    </Styled.PlainHeader>
   );
 }
 
 export default PlainHeader;
+
+const Styled = {
+  PlainHeader: styled.header`
+    background:${color.blue};
+    position:relative;
+    min-height:30px;
+    &{
+
+    }
+  `
+}

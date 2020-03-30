@@ -28,6 +28,7 @@ import moment from 'moment';
 import {convertDateTime} from 'lib/library';
 import {useDidUpdateEffect} from 'lib/utils';
 // import {mapper} from 'lib/mapper';
+import {mapper} from 'lib/mapper';
 
 
 
@@ -726,7 +727,7 @@ function SignUpForm({
       </form>
       <TermsOfUseInfo />
       <p className="signup__info login">이미 계정이 있으신가요?
-        <span className="login__info"><Link to="/auth/signin">로그인하기</Link></span>
+        <span className="login__info"><Link to={mapper.pageUrl.login}>로그인하기</Link></span>
       </p>
 
     </Styled.SignUpForm>

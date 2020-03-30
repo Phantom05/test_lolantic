@@ -11,7 +11,7 @@ function Auth(props){
   const {match} = props;
   return(
   <Switch>
-     <Route path={`${match.path}/signin`} component={AuthSignIn} />
+     <Route path={`${match.path}/login`} component={AuthSignIn} />
      <Route path={`${match.path}/signup`} component={AuthSignUp} />
      <Route path={`${match.path}/reset/password`} component={AuthResetPassword} />
      <Route path={`${match.path}/logout`} component={Logout} />

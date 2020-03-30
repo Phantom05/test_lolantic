@@ -42,27 +42,29 @@ router.post('/launcher/login', function(req, res, next) {
   console.log(req.body);
   const {email,password} = req.body;
   const token ="rgkjawgkjh34kj34kh56k3q4h6kjq2346k34";
-  if(password == '123a123a!'){
-    res.json(
-      {
-        isOnline:false,
-      result:1,
-      token,
-      profile:{
-        open:true,
-        name:"Chris Brown",
-        company : "새하얀 치과", 
-        country : "KO", 
-        location : "서울", 
-        email : email, 
-        type:"",
-        userCode:"20Jan31-0000"
-      }
-    }
-    )
-  }else{
-    res.json({result:2})
-  }
+  res.json({result:1})
+
+  // if(password == '123a123a!'){
+  //   res.json(
+  //     {
+  //       isOnline:false,
+  //     result:1,
+  //     token,
+  //     profile:{
+  //       open:true,
+  //       name:"Chris Brown",
+  //       company : "새하얀 치과", 
+  //       country : "KO", 
+  //       location : "서울", 
+  //       email : email, 
+  //       type:"",
+  //       userCode:"20Jan31-0000"
+  //     }
+  //   }
+  //   )
+  // }else{
+  //   res.json({result:2})
+  // }
 });
 
 /**

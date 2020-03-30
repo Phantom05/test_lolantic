@@ -38,7 +38,6 @@ function DashboardTemplate({  nav, header, children,title,rightSpace, styleConf 
       {children && 
         <div className={cx('DashboardTemplate__main')} ref={childrenRef}>
             {title && <div className="DashboardTemplate__title">{title}</div>}
-            
             {children && 
               <div bg={"white"} className={cx("DashboardTemplate__children")}>{children}
               
@@ -74,20 +73,18 @@ const Styled = {
       position:fixed;
       left:0;
       top:${({header})=>header.y ? header.y:0 }px;
-      min-height:${({header})=>header.y ?`calc(100% - ${header.y}px)`:'100%' };
+      height:${({header})=>header.y ?`calc(100% - ${header.y}px)`:'100%' };
     }
     .DashboardTemplate__main{
-      ${({header})=>header.y && `margin-top:${header.y}px; height:calc(100% - ${header.y}px)`}
-      ${({nav,rightSpace})=>nav.x && `
-        margin-left:${nav.x}px; 
-        width:calc(100% - ${(rightSpace.x?rightSpace.x:0) + nav.x +2 - 0}px)`};
-      ${({rightSpace})=> `padding:${rightSpace.x?'30px 0 30px 30px':'30px'}`}
+      ${({header})=>header.y && `margin-top:${header.y}px; height:calc(100% - ${header.y}px)`};
+      ${({nav,rightSpace})=>nav.x && `margin-left:${nav.x}px; width:calc(100% - ${(rightSpace.x?rightSpace.x:0) + nav.x +2 - 0}px)`};
+      ${({rightSpace})=> `padding:${rightSpace.x?'30px 0 30px 30px':'30px'}`};
       &:after{
         display:block;
         content:"";
         clear: both;
       }
-      min-height:100vh;
+      /* min-height:100vh; */
       float:left;
       /* max-width:${device.pc}; */
     }

@@ -80,6 +80,9 @@ const endPoint ={
   post_error_meesage:`${ip}/launcher/api/error`
 }
 
+
+endPoint.post_signin = `${testIp}/auth/launcher/login`
+
 // for(const keyName in endPoint){
 //   const value = endPoint[keyName];
 //   endPoint[keyName] = api_address + value
@@ -128,8 +131,8 @@ function Acx(axiosConf,config = {}){
         if(data.headers){
         // if(!error && data && data.headers && data.headers.onlineState != null){
             // Actions.base_profile_info_update({value:data.headers.onlineState}); 
-            Actions.base_network_connect({value:data.headers.onlineState}); 
-            Actions.base_message_get({value: data.headers.notReadMessage});
+            // Actions.base_network_connect({value:data.headers.onlineState}); 
+            // Actions.base_message_get({value: data.headers.notReadMessage});
         }
       }catch(err){
         // 오류 처리

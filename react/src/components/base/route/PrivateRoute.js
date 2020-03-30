@@ -2,6 +2,7 @@ import React from 'react';
 import {Route,Redirect} from 'react-router-dom';
 import {useSelector} from 'react-redux';
 import {FullScreenLoading} from 'components/base/loading';
+import {mapper} from 'lib/mapper';
 
 // <PrivateRoute path="/project" component={Project} to="/auth/signup"/>
 function PrivateRoute({component:Component,...rest}) {
@@ -14,7 +15,7 @@ function PrivateRoute({component:Component,...rest}) {
       if(landing){
         return <FullScreenLoading visible={true}/>
       }else if(!signIn.isAutheticated){
-        return <Redirect to={rest.to? rest.to : '/auth/signin'}/>
+        return <Redirect to={rest.to? rest.to : mapper.pageUrl.login}/>
       }else if(rest.redirect){
         return <Redirect to={isRedirect}/>
       }else{

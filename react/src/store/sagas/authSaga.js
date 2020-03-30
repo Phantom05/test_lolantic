@@ -83,6 +83,7 @@ function* handleToken({payload}){
       email:storage.get('email'),
       password:storage.get('password')
     }
+    console.log(tmpPaylod,'tmpPaylod');
     if(!tmpPaylod.email || !tmpPaylod.password){
       Actions.auth_init('signIn');
       Actions.base_exit_landing();

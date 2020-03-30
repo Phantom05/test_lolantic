@@ -8,6 +8,8 @@ import {regEmail, regPassword} from 'lib/library';
 // import {Timer} from 'components/base/timer';
 import { Link } from 'react-router-dom';
 import _ from 'lodash';
+import {mapper} from 'lib/mapper';
+
 
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
@@ -366,7 +368,7 @@ function ResetPasswordForm({check, onSubmit, resetPass, authEmail, timer}) {
         </Grid>
       </form>
       <p className="signup__info login">이미 계정이 있으신가요?
-        <span className="login__info"><Link to="/auth/signin">로그인하기</Link></span>
+        <span className="login__info"><Link to={mapper.pageUrl.login}>로그인하기</Link></span>
       </p>
     </Styled.ResetPasswordForm>
   );
