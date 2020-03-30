@@ -1,0 +1,1 @@
+export {default as PlainTable} from './PlainTable';

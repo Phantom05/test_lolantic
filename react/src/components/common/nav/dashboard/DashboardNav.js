@@ -37,7 +37,7 @@ const menuList = [
     id:11,
     title:'경매 분석',
     icon:icon_case_teeth,
-    link:'/action/analysis',
+    link:'/action',
     hidden:false
   },
   {
@@ -49,7 +49,7 @@ const menuList = [
   },
   {
     id:3,
-    title:'Works',
+    title:'부동산 추이',
     icon:icon_works_box,
     link:'/works/1',
     hidden:false

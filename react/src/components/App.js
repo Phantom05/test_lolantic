@@ -23,6 +23,7 @@ import {
   Mypage,
   Alert,
   Analysis,
+  Action,
   Manage
 } from 'pages';
 
@@ -73,7 +74,7 @@ function App() {
             <PrivateRoute path="/home" component={Home} />
             <PrivateRoute path="/analysis" component={Analysis} />
             <PrivateRoute path="/manage" component={Manage} /> */}
-            {/* {/* <PrivateRoute path="/mypage" component={Mypage} /> */}
+            <PrivateRoute path="/action" component={Action} />
             <PrivateRoute path="/case" component={Case} />
             <PrivateRoute path="/works/:list" component={Works} />
             <PrivateRoute path="/mypage" component={Mypage} />

@@ -13,6 +13,15 @@ const Works = React.memo(function Works() {
       title="Works"
     >
       Works
+      아파트 거래량 <br/>
+      주택 거래량 <br/>
+      빌라 거래랑 <br/>
+
+      아파트 경매 거래량,  <br/>
+      주택 경매 거래량,  <br/>
+      빌라 경매 거래량,  <br/>
+
+      서울, 경기, <br/>
     </DashboardTemplate>
   );
 })

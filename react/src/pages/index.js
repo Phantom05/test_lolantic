@@ -7,4 +7,5 @@ export {default as Works} from './works/Works';
 export {default as Alert} from './alert/Alert';
 export {default as Analysis} from './analysis/Analysis';
 export {default as Manage} from './manage/Manage';
+export {default as Action} from './action/Action';
 
