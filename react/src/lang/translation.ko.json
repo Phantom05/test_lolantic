@@ -1,0 +1,5 @@
+{
+  "hello":"안녕하세요",
+  "message.hello": "안녕하세요",
+  "n.selected": "{{n}} 개 선택됨."
+}

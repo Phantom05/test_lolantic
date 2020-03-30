@@ -1,0 +1,1 @@
+export {default as TeethModule} from './TeethModule';

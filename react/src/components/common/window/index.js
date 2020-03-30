@@ -1,0 +1,1 @@
+export {default as PlainWindow} from './PlainWindow';
