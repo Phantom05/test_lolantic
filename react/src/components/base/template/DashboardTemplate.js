@@ -78,7 +78,10 @@ const Styled = {
     .DashboardTemplate__main{
       ${({header})=>header.y && `margin-top:${header.y}px; height:calc(100% - ${header.y}px)`};
       ${({nav,rightSpace})=>nav.x && `margin-left:${nav.x}px; width:calc(100% - ${(rightSpace.x?rightSpace.x:0) + nav.x +2 - 0}px)`};
-      ${({rightSpace})=> `padding:${rightSpace.x?'30px 0 30px 30px':'30px'}`};
+      ${({rightSpace})=> {
+        const paddingSize = 20;
+        return `padding:${rightSpace.x?`${paddingSize}px 0 ${paddingSize}px ${paddingSize}px`:`${paddingSize}px`}`
+      }};
       &:after{
         display:block;
         content:"";

@@ -14,6 +14,7 @@ var authRouter= require('./routes/auth');
 var listingRouter = require('./routes/listing');
 var caseRouter = require('./routes/case');
 var binRouter = require('./routes/bin');
+var launcherRouter = require('./routes/launcher');
 
 
 
@@ -44,6 +45,8 @@ app.use('/auth', authRouter);
 app.use('/list', listingRouter);
 app.use('/bin', binRouter);
 app.use('/case', caseRouter);
+app.use('/launcher', launcherRouter);
+
 
 
 

@@ -21,20 +21,34 @@ from  'components/base/images';
 const menuList = [
   {
     id:0,
-    title:'Home',
+    title:'Dashboard',
     icon:icon_case_teeth,
     link:'/home',
-    hidden:true
+    hidden:false
   },
   {
     id:1,
-    title:'Case',
+    title:'집값 분석',
     icon:icon_case_teeth,
-    link:'/case',
+    link:'/analysis',
+    hidden:false
+  },
+  {
+    id:11,
+    title:'경매 분석',
+    icon:icon_case_teeth,
+    link:'/action/analysis',
     hidden:false
   },
   {
     id:2,
+    title:'부동산 관리',
+    icon:icon_works_box,
+    link:'/manage',
+    hidden:false
+  },
+  {
+    id:3,
     title:'Works',
     icon:icon_works_box,
     link:'/works/1',
@@ -58,8 +72,8 @@ function DashboardNav(props) {
   const [navList] = useImmer(menuList);
   // const [deClick,setDeClick] = useImmer(true);
   const {profile,info,auth} =props;
-  const isGhostCustomer = auth.signIn.grade === 3;
-  const userCode =auth.signIn.profile.userCode;
+  // const isGhostCustomer = auth.signIn.grade === 3;
+  // const userCode =auth.signIn.profile.userCode;
   
   const handleClick = _.throttle(config=>{
     const {type} = config;    
@@ -71,9 +85,9 @@ function DashboardNav(props) {
     <Styled.DashboardNav>
       <div className="DashboardNav__link_con">
         {navList.map(item=>{
-          if((isGhostCustomer || !true) && [3,4].indexOf(item.id) !== -1){
-            return null;
-          }
+          // if((isGhostCustomer || !true) && [3,4].indexOf(item.id) !== -1){
+          //   return null;
+          // }
           const isWorksPage = cutUrl(item.link)===cutUrl(props.location.pathname);
           return <div className={cx('DashboardNav__link box',{hidden:item.hidden})} key={item.id}>
           <NavLink 
@@ -102,9 +116,7 @@ function DashboardNav(props) {
 const Styled = {
   DashboardNav: styled.nav`
     position:relative;
-    width:180px;
-    /* min-height:100vh; */
-    /* padding-top:50px; */
+    width:200px;
     height:100%;
     background:white;
     .DashboardNav__link{

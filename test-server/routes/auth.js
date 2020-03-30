@@ -67,6 +67,18 @@ router.post('/launcher/login', function(req, res, next) {
   // }
 });
 
+
+router.post('/launcher/api/user/logout', function(req, res, next) {
+  console.clear();
+  console.log('login');
+  console.log(req.body);
+  const {email,password} = req.body;
+  const token ="rgkjawgkjh34kj34kh56k3q4h6kjq2346k34";
+  res.json({result:1})
+
+});
+
+
 /**
  * ROUTER:
  */

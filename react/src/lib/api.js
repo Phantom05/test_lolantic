@@ -3,7 +3,7 @@ import _ from 'lodash';
 import axios from 'axios';
 import {Actions} from 'store/actionCreators';
 import {
-  // api_address, 
+  api_address, 
   lfw_address,
   lfw_bin_address, 
   test_server_address,
@@ -11,7 +11,8 @@ import {
 } from 'lib/setting';
 
 let testIp = test_server_address;
-let ip = lfw_address;
+// let ip = lfw_address;
+let ip = api_address
 let localIp = `http://localhost:13986`;
 // let localIp = `http://localhost:3000`;
 let binIp = lfw_bin_address;

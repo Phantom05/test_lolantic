@@ -21,7 +21,9 @@ import {
   Case,
   Works,
   Mypage,
-  Alert
+  Alert,
+  Analysis,
+  Manage
 } from 'pages';
 
 const scrollControllerStyle = {
@@ -69,6 +71,9 @@ function App() {
           <Switch>
             <PrivateRoute exact path="/" component={Home} redirect="/case" />
             <PrivateRoute path="/home" component={Home} />
+            <PrivateRoute path="/analysis" component={Analysis} />
+            <PrivateRoute path="/manage" component={Manage} /> */}
+            {/* {/* <PrivateRoute path="/mypage" component={Mypage} /> */}
             <PrivateRoute path="/case" component={Case} />
             <PrivateRoute path="/works/:list" component={Works} />
             <PrivateRoute path="/mypage" component={Mypage} />
